@@ -68,7 +68,7 @@ function getData(data){
 }).catch((error)=>{
     console.log("error");
 }); */
-/* async function myFunction(){
+async function myFunction(){
     let myData = await getData(myArray);
     console.log(myData);
 }
@@ -76,7 +76,7 @@ const fetchData = async ()=>{
     let myData = await getData(myArray);
     console.log(myData);
 }
-fetchData(); */
+fetchData();
 
 const fetchData = async (country="co", category="business") => {
     let response = await fetch(`http://newsapi.org/v2/top-headlines?country=${country}&category=business&apiKey=f666b1a15c8940dc9df48ce0596933fa`);
