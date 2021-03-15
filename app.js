@@ -1,8 +1,108 @@
-const fetchData = async (country="co", category="business") => {
+/* console.log("Hola mundo");
+let myVariable = 3;
+
+if(myVariable < 4){
+    let test = 5;
+}
+console.log(test);
+let myString1 = "hola";
+let myString2 = "Qu[e hace";
+let myString3 = "señor";
+console.log(`Buenas, ${myString1} ${myString2} ${myString3}`); //Template string
+for(let i=0; i<8; i++){
+    console.log(i);
+}
+while(myVariable < 6){
+    console.log(myVariable)
+    myVariable++;
+}
+switch(myVariable){ //Selector
+    case 1:
+        break;
+    case 2:
+        break; 
+} */
+
+/* for(let 1=0; i<5; i++){
+    document.write("<h1>Hola mundo</h1>");
+    document.write("<p>Buenas</p>");
+
+} */
+
+/* let myArray = [2,4,5,6,7];
+function test(){
+console.log("Hola");
+}
+const test1 = (a)=>{
+    console.log("hola" + a);
+    return a;
+};
+let myData = test1(3);
+
+let aux = 0;
+myArray.forEach((element)=>{
+    aux = aux + element;
+});
+
+let myNewArray = myAray.map((element)=>{
+    
+    return element*4; //[,16,20,24,28]
+});
+console.log(myNewArray); */
+
+/* let myArray = [2,4,5,6,7];
+function getData(data){
+    return new Promise((resolve,reject)=>{
+        if(data.lenght == 0){
+            reject(new Error("Hubo un error"));
+        }
+        setInterval(()=>{
+            resolve(data);
+        },2000);
+    });
+} */
+/*getData(myArray).then((cosa)=>{
+    console.log(cosa);
+    console.log("Cumpli la promesa");
+    console.log("hola" + cosa );
+}).catch((error)=>{
+    console.log("error");
+}); */
+/* async function myFunction(){
+    let myData = await getData(myArray);
+    console.log(myData);
+}
+const fetchData = async ()=>{
+    let myData = await getData(myArray);
+    console.log(myData);
+}
+fetchData(); */
+
+/* res.sort((a, b)=> a - b);
+    document.write(res); */
+
+/* const fetchData2 = async () => {
+    let res = await fetch(`https://restcountries.eu/rest/v2/all`);
+    let dataJson = await res.json();
+    return dataJson.name;
+}
+const renderData2 = async () => {
+    const countriesNames = await fetchData2();
+
+    let container = document.getElementById("countries");
+    window.forEach((name) => {
+        let alertTemplate2 = `<option value="ae">${window.name}</option>`;
+        container.innerHTML += alertTemplate2;
+    });
+}
+renderData2(); */
+
+const fetchData = async (country = "co", category = "business") => {
     let response = await fetch(`http://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=f666b1a15c8940dc9df48ce0596933fa`);
     let dataJson = await response.json()
     return dataJson.articles;
 }
+
 const renderData = async (category) => {
     let country = document.getElementById("countries").value;
     const articles = await fetchData(country, category);
@@ -21,7 +121,7 @@ const renderData = async (category) => {
             </div>
           </div>
         </div>`;
-    container.innerHTML += alertTemplate;
-  });
+        container.innerHTML += alertTemplate;
+    });
 }
 renderData();
